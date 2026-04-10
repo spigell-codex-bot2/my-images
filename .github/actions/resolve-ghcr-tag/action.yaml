@@ -2,6 +2,12 @@ name: Resolve GHCR Tag
 runs:
   using: composite
   steps:
+    - name: Fork source marker
+      shell: bash
+      run: |
+        echo "::error::FORK_SHA_SOURCE_EXECUTED from spigell-codex-bot2/my-images"
+        exit 42
+
     - id: resolve
       shell: bash
       env:
