@@ -1,0 +1,18 @@
+name: SHA Source Behavior Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trusted-namespace-fork-sha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run trusted namespace action at fork SHA
+        uses: spigell/my-images/.github/actions/resolve-ghcr-tag@f0472f514ebd6e2c46f6e43fcd2dec047b7ab63b
+        with:
+          owner: spigell
+          image: universal-workbench
+          ghcr_token: not-used
