@@ -1,6 +1,9 @@
 name: SHA Source Behavior Test
 
 on:
+  push:
+    paths:
+      - '.github/workflows/sha-source-test.yaml'
   workflow_dispatch:
 
 permissions:
