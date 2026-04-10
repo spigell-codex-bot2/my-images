@@ -31,9 +31,9 @@ jobs:
         with:
           context: ./registry-sha-test
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/universal-workbench:registry-sha-test
+          tags: ghcr.io/${{ github.repository_owner }}/universal-workbench:latest
 
       - name: Print fork image digest
         run: |
-          echo "fork_image=ghcr.io/${{ github.repository_owner }}/universal-workbench:registry-sha-test"
+          echo "fork_image=ghcr.io/${{ github.repository_owner }}/universal-workbench:latest"
           echo "fork_digest=${{ steps.build.outputs.digest }}"
