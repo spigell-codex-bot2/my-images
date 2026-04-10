@@ -25,15 +25,15 @@ jobs:
 
       - uses: docker/setup-buildx-action@v3
 
-      - name: Build and push fork-owned registry source image
+      - name: Build and push fork-owned universal-workbench image
         id: build
         uses: docker/build-push-action@v6
         with:
           context: ./registry-sha-test
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/registry-sha-source-test:registry-sha-test
+          tags: ghcr.io/${{ github.repository_owner }}/universal-workbench:registry-sha-test
 
       - name: Print fork image digest
         run: |
-          echo "fork_image=ghcr.io/${{ github.repository_owner }}/registry-sha-source-test:registry-sha-test"
+          echo "fork_image=ghcr.io/${{ github.repository_owner }}/universal-workbench:registry-sha-test"
           echo "fork_digest=${{ steps.build.outputs.digest }}"
